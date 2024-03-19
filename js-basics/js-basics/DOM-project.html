@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project</title>
+
+</head>
+<body>
+<p>Youtube Subscribe Buttton</p>
+
+<button onclick=" subscribe();"
+class="json-subscribe-button">Subscribe</button>
+<p>Rock Paper Scissors</p>
+<p>Amazon Shipping Calculator</p>
+<p>Orders under $40 = +$10 shipping.</p>
+<p>Orders over $40 = FREE shipping.</p>
+
+<input  class="js-cost-input"   type="text"   placeholder="Cost of order"   onkeydown="
+handleCostKey(event);
+" />
+<button  class="calculate-button"  onclick="    calculateTotal();">Calculate</button>
+<p class="js-total-cost"></p>
+ <script>
+
+
+function handleCostKey(event){
+   
+if (event.key==='Enter'){
+    calculateTotal();
+}
+}
+
+//.value is used to target a text inside a box or an input
+function calculateTotal(){
+    //query selector initalized to a variable
+ const inputElement = document.querySelector('.js-cost-input');
+ //Number automatically converts a string to  a number .this is called type coercion
+  let cost = Number(inputElement.value) ;
+if(cost <40){
+cost = cost +10;
+
+}
+document.querySelector('.js-total-cost').innerHTML=`$${cost}`;
+
+
+}
+
+
+
+ function subscribe(){
+    const buttonElement= document.querySelector('.json-subscribe-button');
+if(buttonElement.innerHTML=== 'Subscribe'){
+    buttonElement.innerHTML= 'Subscribed';
+} else {
+    buttonElement.innerHTML ='Subscribe';
+}
+
+ }
+
+ </script>  
+</body>
+</html>

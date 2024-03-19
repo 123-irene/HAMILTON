@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+  //dot notation
+      const product = {name: 'Irene',
+       price:1099
+    };
+    console.log(product)
+    console.log(product.price)
+    //Reassigning the value of name
+    product.name ='cotton'
+    console.log(product)
+
+    //bracket notation used to access values that cannot be accessed by dot notation
+    const product2 ={
+        name:'Irene',
+        'delivery-time':'1 day'
+        
+    };
+    //bracket notation
+    console.log(product2['delivery-time']);
+    console.log(product2['name']);
+    //we can nest an object inside an object and a function
+    const product3 ={
+        name:'Irene',
+        'delivery-time':'1 day',
+        rating :{
+         stars:4.5,
+         count:87
+        },
+       fun: function function1(){
+        console.log('This is a function inside an object');
+       }
+    };
+    product3.fun();
+    //JSON.stringify converts a javascript to strings
+    console.log(JSON.stringify(product3));
+
+    //Autoboxing
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+
+    </script>
+</body>
+</html>

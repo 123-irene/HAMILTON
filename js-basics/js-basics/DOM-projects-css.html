@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project</title>
+<style>
+.json-subscribe-button{
+    background-color: black;
+  color: white;
+  padding-top: 10px;
+  padding-bottom:10px ;
+  padding-left: 17px;
+  padding-right: 17px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 30px;
+cursor: pointer;
+}
+.is-subscribed{
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+.body{
+    font-family: Arial;
+    font-size: 25px;
+}
+.js-cost-input{
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 30px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: gray;
+}
+.js-cost-input::placeholder{
+    font-size: 15px;
+}
+.calculate-button{
+    background-color: rgb(5, 136, 5);
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.youtube{
+    font-size: 19px;
+}
+.rock{
+    margin-top: 80px;
+    font-size: 17px;
+    font-family: Arial;
+    font-weight: 100;
+}
+
+</style>
+    
+</head>
+<body>
+<p class="youtube">Youtube Subscribe Buttton</p>
+
+<button onclick=" subscribe();"
+class="json-subscribe-button">Subscribe</button>
+
+<p>Amazon Shipping Calculator</p>
+<p>Orders under $40 = +$10 shipping.</p>
+<p>Orders over $40 = FREE shipping.</p>
+
+<input  class="js-cost-input"   type="text"   placeholder="Cost of order"   onkeydown="
+handleCostKey(event);
+" />
+<button  class="calculate-button"  onclick="    calculateTotal();">Calculate</button>
+<p class="rock">Rock Paper Scissors</p>
+<p class="js-total-cost"></p>
+ <script>
+
+
+function handleCostKey(event){
+   
+if (event.key==='Enter'){
+    calculateTotal();
+}
+}
+
+//.value is used to target a text inside a box or an input
+function calculateTotal(){
+    //query selector initalized to a variable
+ const inputElement = document.querySelector('.js-cost-input');
+ //Number automatically converts a string to  a number .this is called type coercion
+  let cost = Number(inputElement.value) ;
+if(cost <40){
+cost = cost +10;
+
+}
+document.querySelector('.js-total-cost').innerHTML=`$${cost}`;
+
+
+}
+
+
+
+ function subscribe(){
+    const buttonElement= document.querySelector('.json-subscribe-button');
+if(buttonElement.innerText=== 'Subscribe'){
+    buttonElement.innerHTML= 'Subscribed';
+    //classlist is used to change the background when clicked
+    buttonElement.classList.add('is-subscribed');
+} else {
+    buttonElement.innerHTML ='Subscribe';
+   buttonElement.classList.remove('is-subscribed')
+}
+
+ }
+
+ </script>  
+</body>
+</html>

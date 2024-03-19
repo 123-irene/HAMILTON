@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        .cart{
+            background-color: rgb(254, 222, 61);
+            height: 40px;
+            font-size: 15px;
+            padding-left: 70px;
+            padding-right: 70px;
+            border: none;
+            border-radius: 30px;
+            margin-right: 20px;
+        }
+        .request{
+            height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: black;
+            color: white;
+            font-size: 15px;
+            border: none;
+            border-radius: 7px;
+            margin-right: 20px;
+        }
+        .schedule{
+            font-size: 15px;
+            background-color:rgb(230, 230, 230);
+            height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body>
+    <button class="cart">Add to Cart</button>
+    <button class="request">Request now</button>
+    <button class="schedule">Schedule for later</button>
+    <button onclick=""   class="js-button">Test</button>
+
+
+
+    <script>
+const test = document.querySelector('.js-button');
+console.log(test.classList.contains('js-button'));
+    </script>
+</body>
+</html>

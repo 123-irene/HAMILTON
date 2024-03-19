@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body> 
+    <p class="js-calculator"></p>
+    <p class="js-total"></p>
+ <p>   <button onclick="
+     calculation  += '1' ;
+    updateCalculation();
+">1</button>
+    <button onclick="
+    calculation += '2';  updateCalculation() ;">2</button>
+    <button onclick="
+    calculation += '3';updateCalculation()  ">3</button>
+    <button onclick="
+    calculation += ' + ';updateCalculation() ;  ">+</button></p>
+   <p> <button onclick="
+    calculation += '4';updateCalculation() ;  " >4</button>
+    <button onclick="
+    calculation += '5'; updateCalculation() ; ">5</button>
+    <button onclick="
+    calculation += '6';updateCalculation();" >6</button>
+    <button onclick="
+    calculation += ' - '; updateCalculation(); ">-</button></p>
+  <p>  <button  onclick="
+    calculation += '7';  updateCalculation();">7</button>
+    <button onclick="
+    calculation += '8'; updateCalculation(); ">8</button>
+    <button onclick="
+    calculation += '9'; updateCalculation();">9</button>
+    <button onclick="
+    calculation += ' * '; updateCalculation(); ">*</button></p>
+  <p>  <button onclick="
+    calculation += '0';updateCalculation();  ">0</button>
+    <button onclick="
+    calculation += ' . '; updateCalculation() ;" >.</button>
+    <button onclick ="eval(calculation); calculation =eval(calculation); updateCalculation() ">=</button>
+    <button onclick="
+    calculation += ' / ';updateCalculation() ; ">/</button></p>
+    <button onclick="
+     calculation='';
+      updateCalculation();
+     
+      localStorage.removeItem('calculation');">Clear</button>
+      
+   <script>
+ let calculation = '';
+  const total=JSON.parse (localStorage.getItem('calculation')); 
+
+// document.querySelector('.js-calculator').innerHTML = calculation;
+
+
+
+
+/*if(!calculation){
+  console.log('');
+}*/
+
+function updateCalculation(){
+    document.querySelector('.js-calculator').innerHTML = calculation;
+}
+
+    
+   </script> 
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart quantity</title>
+  </head>
+
+  <body>
+    <button
+      onclick="
+    console.log(`Cart Quantity : ${cartQuantity }`);
+    if(cartQuantity<0){
+       cartQuantity=0;
+      
+    }
+    document.querySelector('.js-showquantity').innerHTML =(`Cart Quantity : ${cartQuantity }`);
+    "
+    >
+      Show quantity
+    </button>
+
+    <button
+      onclick="
+cartQuantity+=1;
+
+document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);
+"
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+cartQuantity += 2;
+document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);"
+    >
+      +2
+    </button>
+    <button
+      onclick="
+cartQuantity+=3 ;
+document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);;"
+    >
+      +3
+    </button>
+    <button
+      onclick="
+     
+cartQuantity=0;
+document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);  
+"
+    >
+      Reset Cart
+    </button>
+    <button
+      onclick=" subtractThree();
+"
+    >
+      -3
+    </button>
+    <button onclick="subtractTwo();">-2</button>
+    <p class="js-showquantity"></p>
+    <p class="less-item"></p>
+
+    <script>
+              let cartQuantity =0;
+             
+
+              function subtractTwo(){
+                  cartQuantity -=2;
+      if(cartQuantity <2){
+       alert('Not enough items in the cart');
+         cartQuantity=0;
+         document.querySelector('.js-showquantity').innerHTML=`Cart Quantity :${cartQuantity}`;
+      }else {
+          document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);
+      }
+              }
+
+              function subtractThree(){
+                  cartQuantity -=3;
+      if(cartQuantity <3){
+         alert('Not enough items in cart');
+         cartQuantity=0;
+         document.querySelector('.js-showquantity').innerHTML=`Cart  Quantity : ${cartQuantity}`;
+      }else {
+          document.querySelector('.js-showquantity').innerHTML=(` Cart Quantity : ${cartQuantity }`);
+      }
+              }
+    </script>
+  </body>
+</html>
